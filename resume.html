@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body class="bg-dark-500 text-secondary-500">
+    <custom-navbar></custom-navbar>
+    
+    <main class="max-w-4xl mx-auto px-6 py-20">
+        <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg">
+            <!-- Resume Header -->
+            <header class="text-center mb-8">
+                <h1 class="text-3xl font-bold mb-2">YOUR NAME</h1>
+                <p class="text-gray-600 mb-4">Software Developer | Your Location</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="mailto:your@email.com" class="text-sm text-gray-600 hover:text-primary-500">
+                        <i data-feather="mail" class="inline mr-1"></i> your@email.com
+                    </a>
+                    <a href="tel:+1234567890" class="text-sm text-gray-600 hover:text-primary-500">
+                        <i data-feather="phone" class="inline mr-1"></i> +1234567890
+                    </a>
+                    <a href="https://github.com/yourusername" class="text-sm text-gray-600 hover:text-primary-500">
+                        <i data-feather="github" class="inline mr-1"></i> github.com/yourusername
+                    </a>
+                </div>
+            </header>
+
+            <!-- Resume Sections -->
+            <section class="mb-8">
+                <h2 class="text-xl font-bold border-b border-gray-300 pb-2 mb-4">SUMMARY</h2>
+                <p class="text-gray-700">Experienced software developer with X years of experience in web development. Skilled in JavaScript, React, Node.js and modern web technologies.</p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-xl font-bold border-b border-gray-300 pb-2 mb-4">EXPERIENCE</h2>
+                <div class="mb-4">
+                    <h3 class="font-bold">Senior Developer at ABC Company</h3>
+                    <p class="text-gray-600 text-sm mb-2">Jan 2020 - Present</p>
+                    <ul class="list-disc pl-5 text-gray-700">
+                        <li>Developed and maintained web applications using React and Node.js</li>
+                        <li>Led a team of 5 developers to deliver projects on time</li>
+                        <li>Implemented CI/CD pipelines reducing deployment time by 50%</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-xl font-bold border-b border-gray-300 pb-2 mb-4">EDUCATION</h2>
+                <div>
+                    <h3 class="font-bold">Bachelor's in Computer Science</h3>
+                    <p class="text-gray-600 text-sm">XYZ University, 2015 - 2019</p>
+                </div>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-xl font-bold border-b border-gray-300 pb-2 mb-4">SKILLS</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                    <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">React</span>
+                    <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Node.js</span>
+                    <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">HTML/CSS</span>
+                    <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Git</span>
+                </div>
+            </section>
+
+            <!-- Download Button -->
+            <div class="text-center mt-8">
+                <a href="/resume.pdf" download class="inline-block bg-primary-500 text-white px-6 py-3 rounded hover:bg-primary-600 transition-colors">
+                    <i data-feather="download" class="inline mr-2"></i> Download PDF
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script>
+        feather.replace();
+        // Replace YOUR_FORM_ID with your actual Google Form ID
+        document.querySelectorAll('a[href*="YOUR_FORM_ID"]').forEach(link => {
+            link.href = "https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-...your-integrity-hash-here..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script>
+tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#64ffda',
+                        },
+                        secondary: {
+                            500: '#ccd6f6',
+                        },
+                        dark: {
+                            500: '#0a192f',
+                            400: '#112240',
+                            300: '#233554',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+    // Load saved theme
+    if (localStorage.getItem("theme") === "light") {
+        alert("light mode");
+        document.documentElement.classList.add("light");
+    } else {
+        document.documentElement.classList.add("dark");
+    }
+</script>
+
+</head>
+<body class="bg-dark-500 text-secondary-500 font-sans">
+    <custom-navbar></custom-navbar>
+    
+    <main class="max-w-6xl mx-auto px-6 md:px-12 py-20">
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center pt-16">
+            <div class="w-full">
+                <p class="text-primary-500 mb-4">Hi, my name is</p>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-2">Abhijit Salunke</h1>
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-400 mb-6">Full-Stack Software Engineer.</h2>
+                <p class="max-w-lg text-gray-400 mb-8">
+                    I'm a full-stack software engineer working at a product-based company, building a modern School ERP platform. I specialize in developing scalable, user-friendly modules that enhance academic and administrative workflows.
+                </p>
+                <a href="#work" class="inline-block border border-primary-500 text-primary-500 px-6 py-3 rounded hover:bg-primary-500 hover:bg-opacity-10 transition-all duration-300">
+                    Check out my work!
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="min-h-screen py-20">
+            <h2 class="text-2xl md:text-3xl font-bold text-white flex items-center mb-12">
+                <!-- <span class="text-primary-500 mr-4"></span> -->
+                About Me
+                <span class="h-px bg-gray-700 flex-1 ml-4"></span>
+            </h2>
+            
+            <div class="grid md:grid-cols-5 gap-8">
+                <div class="md:col-span-3">
+                    <p class="mb-4">Hi, I'm Abhijit Salunke, a full-stack software engineer based in Pune, India. I currently work at a product-based company where I help build a modern School ERP system, focusing on scalable backend services and clean, intuitive user experiences.</p>
+                    <p class="mb-4">Technologies I work with::</p>
+                    <ul class="grid grid-cols-2 gap-2 mb-8">
+                        <li class="flex items-center">
+                            <i data-feather="chevron-right" class="text-primary-500 mr-2 w-4 h-4"></i>
+                            JavaScript (ES6+), React
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="chevron-right" class="text-primary-500 mr-2 w-4 h-4"></i>
+                            Java, Spring Boot, JSP / Servlets
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="chevron-right" class="text-primary-500 mr-2 w-4 h-4"></i>
+                            PostgreSQL, MySQL
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="chevron-right" class="text-primary-500 mr-2 w-4 h-4"></i>
+                            TypeScript
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="chevron-right" class="text-primary-500 mr-2 w-4 h-4"></i>
+                            Git, Azure, AWS
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2 relative group">
+                    <div class="w-full h-auto rounded overflow-hidden relative before:content-[''] before:absolute before:inset-0 before:bg-primary-500 before:opacity-20 before:rounded before:transition-all before:duration-300 group-hover:before:opacity-0">
+                        <img src="http://static.photos/technology/640x360/42" alt="Profile" class="w-full h-auto rounded transition-all duration-300 group-hover:opacity-100">
+                    </div>
+                    <div class="absolute border-2 border-primary-500 rounded w-full h-full top-4 left-4 -z-10 group-hover:top-3 group-hover:left-3 transition-all duration-300"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="min-h-screen py-20">
+            <h2 class="text-2xl md:text-3xl font-bold text-white flex items-center mb-12">
+                <!-- <span class="text-primary-500 mr-4">02.</span> -->
+                Some Things I've Built
+                <span class="h-px bg-gray-700 flex-1 ml-4"></span>
+            </h2>
+
+            <div class="space-y-20">
+                <!-- Project 1 -->
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-primary-500 opacity-20 rounded-lg group-hover:opacity-0 transition-all duration-300"></div>
+                        <img src="https://advantidge.com/wp-content/uploads/2022/03/Visitor-Management-System.jpg" alt="Project 1" class="w-full h-auto rounded-lg">
+                    </div>
+                    <div class="md:text-right">
+                        <p class="text-primary-500 mb-2"></p>
+                        <h3 class="text-2xl font-bold text-white mb-4">Visitor Entry Management Module</h3>
+                        <div class="bg-dark-400 p-6 rounded-lg shadow-lg mb-4">
+                            <p>A web-based system for schools to record and monitor visitor entries. Security staff can register visitor details, capture photos, log in/out times, and specify the person to meet. The module ensures secure data storage and easy access for authorized users.</p>
+
+                        </div>
+                        <div class="flex flex-wrap justify-end gap-4 mb-4 text-sm">
+                            <span>JSP , Metromic UI </span>
+                            <span>Spring Boot, Spring Framework </span>
+                            <span>PostgreSQL</span>
+                            <span>Hibernate</span>
+                            <span>RestAPI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="md:order-2 relative group">
+                        <div class="absolute inset-0 bg-primary-500 opacity-20 rounded-lg group-hover:opacity-0 transition-all duration-300"></div>
+                        <img src="https://kidsday.com/storage/feature-sections/November2024/lwvAkFV5hLCHywU3itnM.png" alt="Project 2" class="w-full h-auto rounded-lg">
+                    </div>
+                    <div class="md:order-1">
+                        <p class="text-primary-500 mb-2"> </p>
+                        <h3 class="text-2xl font-bold text-white mb-4">Activity Tracher Report</h3>
+                        <div class="bg-dark-400 p-6 rounded-lg shadow-lg mb-4">
+                            <p>A web-based module integrated into the school ERP to monitor and manage students’ daily activities. It records detailed information such as meal times, health status, outdoor movements, and incidents, providing a complete activity history for each student.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-3 mb-3 text-sm">
+                            <span>JSP , Metromic UI </span>
+                            <span>Spring Boot, Spring Framework </span>
+                            <span>PostgreSQL</span>
+                            <span>Hibernate</span>
+                            <span>RestAPI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-primary-500 opacity-20 rounded-lg group-hover:opacity-0 transition-all duration-300"></div>
+                        <img src="https://www.winwire.com/wp-content/uploads/2023/10/AI-Powered-Healthcare-BOT.webp" alt="Project 3" class="w-full h-auto rounded-lg">
+                    </div>
+                    <div class="md:text-right">
+                        <p class="text-primary-500 mb-2"></p>
+                        <h3 class="text-2xl font-bold text-white mb-4">HealthBot: Empowering Healthcare through AI-Driven Chatting</h3>
+                        <div class="bg-dark-400 p-6 rounded-lg shadow-lg mb-4">
+                            <p>A rule-based healthcare chatbot that interacts with users through prompt-based questions stored in CSV and Excel files. Based on user responses, it analyzes and displays possible health conditions or illness reports.</p>
+                        </div>
+                        <div class="flex flex-wrap justify-end gap-4 mb-4 text-sm">
+                            <span>Python </span>
+                            <span>Pandas </span>
+                            <span>OpenPyXL</span>
+                            <span>CSV</span>
+                        </div>
+                        <div class="bg-dark-400 p-6 rounded-lg shadow-lg mb-4 md:text-left">
+                             <b> Improvements</b> </p><br>
+                            <p>A rule-based healthcare chatbot that interacts with users through prompt-based questions stored in CSV and Excel files. Based on user responses, it analyzes and displays possible health conditions or illness reports.</p>
+                        </div>
+                    </div>
+            </div>
+            <!-- Project 4 -->
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="md:order-2 relative group">
+                        <div class="absolute inset-0 bg-primary-500 opacity-20 rounded-lg group-hover:opacity-0 transition-all duration-300"></div>
+                        <img src="https://projects.arduinocontent.cc/cover-images/6fb3eace-df78-4064-bc34-ecb7f7a4ce35.png" alt="Project 4" class="w-full h-auto rounded-lg">
+                    </div>
+                    <div class="md:order-1">
+                        <p class="text-primary-500 mb-2"> Electronics Project</p>
+                        <h3 class="text-2xl font-bold text-white mb-4">Line Following Robot</h3>
+                        <div class="bg-dark-400 p-6 rounded-lg shadow-lg mb-4">
+                            <p>An autonomous robot that follows a predefined path using IR sensors and motor control. The robot is programmed in Assembly Language on Arduino, enabling low-level control of sensors and motors for precise navigation and smooth movement.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-3 mb-3 text-sm">
+                            <span>Arduino Uno</span>
+                            <span>Assembly Language</span>
+                            <span>IR Sensors</span>
+                            <span>L293D Motor Driver</span>
+                            <span>DC Motors</span>
+                            <span>9V Battery</span>
+                        </div>
+                    </div>
+                </div>
+
+
+        </section>
+        <!-- Certifications Section -->
+        <section id="certifications" class="min-h-screen py-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-white flex items-center mb-12">
+                <!-- <span class="text-primary-500 mr-4">04.</span> -->
+                Certifications
+                <span class="h-px bg-gray-700 flex-1 ml-4"></span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Certification 1 -->
+                <div class="bg-dark-400 p-6 rounded-lg hover:transform hover:-translate-y-1 transition-transform duration-300">
+                    <div class="flex items-start mb-4">
+                        <div class="mr-4">
+                            <img src="https://images.credly.com/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/twitter_thumb_201604_image.png" alt="Azure Logo" class="w-16 h-16 rounded">
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-1">Microsoft Certified: Azure Fundamentals</h3>
+                            <p class="text-primary-500 text-sm">Microsoft • 2024</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400">Certified in Microsoft Azure Fundamentals (AZ-900) with expertise in core cloud concepts, Azure services, security, and cost management.</p>
+                </div>
+
+                <!-- Certification 2 -->
+                <div class="bg-dark-400 p-6 rounded-lg hover:transform hover:-translate-y-1 transition-transform duration-300">
+                    <div class="flex items-start mb-4">
+                        <div class="mr-4">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png" alt="Microsoft Logo" class="w-16 h-16 rounded">
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-1">Career Essentials in System Administration</h3>
+                            <p class="text-primary-500 text-sm">Microsoft & LinkedIn • 2024</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400">Certified in system administration fundamentals, covering core concepts of OS management, networking, user access, and IT infrastructure maintenance through Microsoft and LinkedIn Learning.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="min-h-screen py-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-white flex items-center mb-12">
+            Experience
+            <span class="h-px bg-gray-700 flex-1 ml-4"></span>
+            </h2>
+
+            <div class="space-y-8">
+            <!-- Experience 1 -->
+            <div class="group bg-dark-400 p-6 rounded-lg shadow-lg flex flex-col md:flex-row md:items-center gap-6 transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl border border-transparent hover:border-primary-500">
+            <div class="w-20 h-20 flex-shrink-0 rounded-full overflow-hidden bg-gray-800 flex items-center justify-center">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJpFnF-hefpccwmMvwBw1CbQkOMSSTxHtZIQ&s" alt="ETHDC Technologies Logo" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="flex-1">
+            <div class="flex items-center justify-between">
+                <div>
+                <h3 class="text-xl font-bold text-white">Software Engineer</h3>
+                <p class="text-primary-500 text-sm">ETHDC Technologies Pvt Ltd • Pune, India</p>
+                </div>
+                <p class="text-sm text-gray-400">2025 — Present</p>
+            </div>
+            <div class="mt-4 text-gray-400">
+                <p>As a fresher software developer, I work on the end-to-end development of School ERP modules, focusing on creating responsive user interfaces and building scalable backend services. I contribute to enhancing existing features and developing new components using a modern full-stack tech stack.</p>
+                <ul class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-400">
+                <li>• Developed dynamic, data-driven modules using JSP, Servlets, JDBC, and PostgreSQL, ensuring smooth communication between the UI and backend.</li>
+                <li>• Built responsive and user-friendly interfaces using HTML, CSS, JavaScript, Bootstrap, and React for seamless user experience.</li>
+                </ul>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2 text-sm">
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">Java</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">JSP</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">Servlets</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">JDBC</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">Spring Boot</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">Hibernate</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">React</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">JavaScript</span>
+                
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">HTML</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">CSS</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">Bootstrap</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">PostgreSQL</span>
+            </div>
+            </div>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="group bg-dark-400 p-6 rounded-lg shadow-lg flex flex-col md:flex-row md:items-center gap-6 transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl border border-transparent hover:border-primary-500">
+            <div class="w-20 h-20 flex-shrink-0 rounded-full overflow-hidden bg-gray-800 flex items-center justify-center">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJpFnF-hefpccwmMvwBw1CbQkOMSSTxHtZIQ&s" alt="ETHDC Technologies Logo" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="flex-1">
+            <div class="flex items-center justify-between">
+                <div>
+                <h3 class="text-xl font-bold text-white">Trainee Software Engineer</h3>
+                <p class="text-primary-500 text-sm">ETHDC Technologies Pvt Ltd • Pune, India</p>
+                </div>
+                <p class="text-sm text-gray-400">May 2025 - Sep 2025</p>
+            </div>
+            <div class="mt-4 text-gray-400">
+                <p>As a Trainee Software Engineer, I supported the development and enhancement of School ERP modules by working across both frontend and backend technologies. I collaborated with the engineering team to implement features, fix issues, and learn industry-level development practices while contributing to real product functionality.</p>
+                <ul class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-400">
+                <li>• Assisted in developing ERP modules using JSP, Servlets, JDBC, and PostgreSQL for backend logic and database management.</li>
+                <li>• Built and improved UI screens using HTML, CSS, JavaScript, Bootstrap, and gained hands-on experience with React for interactive front-end development.</li>
+                </ul>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2 text-sm">
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">JSP</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">Servlets</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">JDBC</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">PostgreSQL</span>
+            </div>
+            </div>
+            </div>
+
+            <!-- Experience 3 -->
+
+            <div class="group bg-dark-400 p-6 rounded-lg shadow-lg flex flex-col md:flex-row md:items-center gap-6 transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl border border-transparent hover:border-primary-500">
+            <div class="w-20 h-20 flex-shrink-0 rounded-full overflow-hidden bg-gray-800 flex items-center justify-center">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJpFnF-hefpccwmMvwBw1CbQkOMSSTxHtZIQ&s" alt="ETHDC Technologies Logo" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="flex-1">
+            <div class="flex items-center justify-between">
+                <div>
+                <h3 class="text-xl font-bold text-white">Project Intern</h3>
+                <p class="text-primary-500 text-sm">ETHDC Technologies Pvt Ltd • Pune, India</p>
+                </div>
+                <p class="text-sm text-gray-400">Dec 2024 - May 2025</p>
+            </div>
+            <div class="mt-4 text-gray-400">
+                <p>During my internship at ETHDC Technologies Pvt. Ltd., I contributed to the development of key modules within the School ERP platform. I worked closely with the engineering team to build dynamic, data-driven features while gaining hands-on experience with full-stack web development and real-world software engineering workflows.</p>
+                <ul class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-400">
+                <li>• Worked on multiple School ERP modules using JSP, Servlets, AJAX, and PostgreSQL to build dynamic and user-friendly functionalities.</li>
+                <li>• Developed interactive front-end pages using HTML, CSS, JavaScript, and Bootstrap for responsive UI screens.</li>
+                </ul>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2 text-sm">
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">JSP</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">Servlets</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">JDBC</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">PostgreSQL</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">HTML</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">CSS</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">JavaScript</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">Bootstrap</span>
+                <span class="border border-primary-500 text-primary-500 px-3 py-1 rounded">AJAX</span>
+            </div>
+            </div>
+            </div>
+
+            </div>
+        </section>
+        <section id="contact" class="min-h-screen py-20 flex items-center">
+<div class="w-full text-center">
+                <p class="text-primary-500 mb-4"> What's Next?</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Get In Touch</h2>
+                <p class="max-w-lg mx-auto text-gray-400 mb-8">
+                    I’m always open to exploring new opportunities in Software Engineering and related roles.
+If you’re hiring or have an exciting project in mind, feel free to reach out — I’d love to connect and see how I can contribute!
+                </p>
+                <a href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" target="_blank" class="inline-block border border-primary-500 text-primary-500 px-6 py-3 rounded hover:bg-primary-500 hover:bg-opacity-10 transition-all duration-300">
+                    Say Hello
+                </a>
+</div>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="components/certificate-modal.js"></script>
+    <script src="script.js"></script>
+<script>feather.replace();</script>
+</body>
+</html>
