@@ -358,19 +358,47 @@ tailwind.config = {
             </div>
 
             </div>
-        </section>
         <section id="contact" class="min-h-screen py-20 flex items-center">
-<div class="w-full text-center">
-                <p class="text-primary-500 mb-4"> What's Next?</p>
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Get In Touch</h2>
-                <p class="max-w-lg mx-auto text-gray-400 mb-8">
-                    I’m always open to exploring new opportunities in Software Engineering and related roles.
-If you’re hiring or have an exciting project in mind, feel free to reach out — I’d love to connect and see how I can contribute!
-                </p>
-                <a href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" target="_blank" class="inline-block border border-primary-500 text-primary-500 px-6 py-3 rounded hover:bg-primary-500 hover:bg-opacity-10 transition-all duration-300">
-                    Say Hello
-                </a>
-</div>
+            <div class="w-full max-w-2xl mx-auto text-center">
+            <p class="text-primary-500 mb-4">What's Next?</p>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Get In Touch</h2>
+            <p class="max-w-lg mx-auto text-gray-400 mb-8">
+                I’m always open to exploring new opportunities in Software Engineering and related roles.
+                If you’re hiring or have an exciting project in mind, feel free to reach out — I’d love to connect and see how I can contribute!
+            </p>
+
+            <form name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                  class="mt-8 bg-dark-400 p-6 rounded-lg shadow-md text-left grid gap-4">
+              
+              <!-- Required hidden input -->
+              <input type="hidden" name="form-name" value="contact">
+
+              <!-- Spam protection -->
+              <input type="hidden" name="bot-field">
+
+              <label class="sr-only" for="name">Your Name</label>
+              <input id="name" type="text" name="name" placeholder="Your Name" required
+                 class="w-full bg-dark-500 border border-gray-700 text-white placeholder-gray-400 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-primary-500">
+
+              <label class="sr-only" for="email">Your Email</label>
+              <input id="email" type="email" name="email" placeholder="Your Email" required
+                 class="w-full bg-dark-500 border border-gray-700 text-white placeholder-gray-400 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-primary-500">
+
+              <label class="sr-only" for="message">Your Message</label>
+              <textarea id="message" name="message" placeholder="Your Message" required rows="6"
+                    class="w-full bg-dark-500 border border-gray-700 text-white placeholder-gray-400 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-primary-500"></textarea>
+
+              <div class="text-right">
+                <button type="submit"
+                    class="inline-block bg-primary-500 text-dark-500 font-semibold px-6 py-3 rounded hover:opacity-90 transition">
+                  Send Message
+                </button>
+              </div>
+            </form>
+            </div>
         </section>
     </main>
 
