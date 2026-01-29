@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhijit Salunke - Resume</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,7 +15,72 @@
             padding: 20px;
             background-color: #f8f9fa;
         }
+
+
+           .chrome-submit {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #333;
+            background: linear-gradient(145deg, #d0d0d0, #f0f0f0, #a0a0a0, #d0d0d0);
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            text-decoration: none;
+            user-select: none;
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+            box-shadow: 
+                inset 0 3px 6px rgba(255, 255, 255, 0.8),
+                inset 0 -3px 6px rgba(0, 0, 0, 0.2),
+                0 8px 16px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(0, 0, 0, 0.1);
+        }
         
+        .chrome-submit:hover {
+            background: linear-gradient(145deg, #e0e0e0, #f8f8f8, #b0b0b0, #e0e0e0);
+            transform: translateY(-3px);
+            box-shadow: 
+                inset 0 3px 6px rgba(255, 255, 255, 0.9),
+                inset 0 -3px 6px rgba(0, 0, 0, 0.15),
+                0 12px 20px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .chrome-submit:active {
+            transform: translateY(1px);
+            box-shadow: 
+                inset 0 3px 6px rgba(255, 255, 255, 0.6),
+                inset 0 -3px 6px rgba(0, 0, 0, 0.3),
+                0 4px 8px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .chrome-submit i {
+            margin-right: 12px;
+            font-size: 1.3rem;
+        }
+        
+        .chrome-submit::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            height: 30%;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
+            border-radius: 5px 5px 50% 50%;
+            pointer-events: none;
+        }
+     
         .contact-info {
             text-align: center;
             margin-bottom: 30px;
@@ -126,149 +192,178 @@
                 display: none;
             }
         }
+        
+        @media print {
+            .chrome-submit {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="contact-info">
-        <div class="name">Abhijit Salunke</div>
-        <div class="contact-details">
-            <div class="contact-item">
-                <a href="mailto:abhijitsalunke071@gmail.com">abhijitsalunke071@gmail.com</a>
+    
+    <!-- <button class="download-btn" onclick="downloadPDF()">📥 Download as PDF</button> -->
+
+     <button class="chrome-submit" type="submit" onclick="downloadPDF()">
+        <i class="fas fa-paper-plane"></i> 📥 Download as PDF
+    </button>
+
+
+
+    
+    <div id="resume-content">
+        <div class="contact-info">
+            <div class="name">Abhijit Salunke</div>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <a href="mailto:abhijitsalunke071@gmail.com">abhijitsalunke071@gmail.com</a>
+                </div>
+                <div class="separator">|</div>
+                <div class="contact-item">
+                    <a href="tel:+917821868335">+91-7821868335</a>
+                </div>
+                <div class="separator">|</div>
+                <div class="contact-item">
+                    <a href="https://www.linkedin.com/in/abhijitsalunke71" target="_blank">linkedin.com/in/abhijitsalunke71</a>
+                </div>
             </div>
-            <div class="separator">|</div>
-            <div class="contact-item">
-                <a href="tel:+917821868335">+91-7821868335</a>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Professional Summary</div>
+            <p>
+                M.Sc. (Computer Science) graduate with hands-on experience in full-stack 
+                web development using Java, Spring Boot, React.js, REST APIs, and 
+                PostgreSQL. Microsoft Azure Certified (AZ-900) with strong 
+                problem-solving and teamwork skills. Proficient in cloud platforms, 
+                databases, and agile methodologies. Seeking a Software Developer / 
+                Software Engineer role to apply technical expertise and contribute to 
+                building scalable, high-performance applications.
+            </p>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Education</div>
+            
+            <div class="subsection">
+                <div class="subsection-title">M.Sc. (Computer Science)</div>
+                <div class="subsection-details">Savitribai Phule Pune University | CGPA: 8.40</div>
+                <div class="date">Apr 2025</div>
             </div>
-            <div class="separator">|</div>
-            <div class="contact-item">
-                <a href="https://www.linkedin.com/in/abhijitsalunke71" target="_blank">linkedin.com/in/abhijitsalunke71</a>
+            
+            <div class="subsection">
+                <div class="subsection-title">B.Sc. (Computer Science)</div>
+                <div class="subsection-details">Savitribai Phule Pune University | CGPA: 8.30</div>
+                <div class="date">Apr 2023</div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">HSC (Science)</div>
+                <div class="date">Feb 2020 | 69.38%</div>
             </div>
         </div>
-    </div>
-    
-    <div class="section">
-        <div class="section-title">Professional Summary</div>
-        <p>
-            M.Sc. (Computer Science) graduate with hands-on experience in full-stack 
-            web development using Java, Spring Boot, React.js, REST APIs, and 
-            PostgreSQL. Microsoft Azure Certified (AZ-900) with strong 
-            problem-solving and teamwork skills. Proficient in cloud platforms, 
-            databases, and agile methodologies. Seeking a Software Developer / 
-            Software Engineer role to apply technical expertise and contribute to 
-            building scalable, high-performance applications.
-        </p>
-    </div>
-    
-    <div class="section">
-        <div class="section-title">Education</div>
         
-        <div class="subsection">
-            <div class="subsection-title">M.Sc. (Computer Science)</div>
-            <div class="subsection-details">Savitribai Phule Pune University | CGPA: 8.40</div>
-            <div class="date">Apr 2025</div>
+        <div class="section">
+            <div class="section-title">Technical Skills</div>
+            
+            <div class="skill-category">
+                <div class="category-title">Programming & Frameworks:</div>
+                <div>Java, Python, JavaScript (ES6+), HTML, CSS, React.js, Spring Boot, Hibernate/ JPA (ORM & Database Mapping), JSP, Servlets, Bootstrap, Material UI</div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="category-title">Databases:</div>
+                <div>MySQL, PostgreSQL</div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="category-title">Web & API Development:</div>
+                <div>Full-Stack Web Development, RESTful APIs</div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="category-title">Cloud & DevOps:</div>
+                <div>Microsoft Azure (AZ-900 Certified), AWS, Jenkins, Docker, Git, GitHub, CI/CD Pipelines</div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="category-title">Operating Systems:</div>
+                <div>Linux, Windows</div>
+            </div>
         </div>
         
-        <div class="subsection">
-            <div class="subsection-title">B.Sc. (Computer Science)</div>
-            <div class="subsection-details">Savitribai Phule Pune University | CGPA: 8.30</div>
-            <div class="date">Apr 2023</div>
+        <div class="section">
+            <div class="section-title">Experience</div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Software Engineer | ETHDC Technology</div>
+                <div class="date">Oct 2025 -- Present</div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Trainee Software Engineer | ETHDC Technology</div>
+                <div class="date">Dec 2024 -- Sep 2025</div>
+                <ul>
+                    <li>Built dynamic web modules using Spring Boot, React.js, REST APIs, Tailwind CSS, Material UI, and AJAX to improve responsiveness</li>
+                    <li>Integrated PostgreSQL with Spring Boot via JPA/Hibernate for scalable data handling</li>
+                    <li>Collaborated in Agile sprints to deliver production-ready features on time</li>
+                    <li>Performed code reviews and module testing to ensure high-quality, maintainable code</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Software Development Intern | Cybzilla Systems Pvt. Ltd.</div>
+                <div class="date">Mar 2024 -- Apr 2024</div>
+                <ul>
+                    <li>Developed web interfaces with HTML, CSS, and JavaScript to enhance UI/UX</li>
+                    <li>Gained experience with Linux OS basics and system-level tasks</li>
+                </ul>
+            </div>
         </div>
         
-        <div class="subsection">
-            <div class="subsection-title">HSC (Science)</div>
-            <div class="date">Feb 2020 | 69.38%</div>
-        </div>
-    </div>
-    
-    <div class="section">
-        <div class="section-title">Technical Skills</div>
-        
-        <div class="skill-category">
-            <div class="category-title">Programming & Frameworks:</div>
-            <div>Java, Python, JavaScript (ES6+), HTML, CSS, React.js, Spring Boot, Hibernate/ JPA (ORM & Database Mapping), JSP, Servlets, Bootstrap, Material UI</div>
-        </div>
-        
-        <div class="skill-category">
-            <div class="category-title">Databases:</div>
-            <div>MySQL, PostgreSQL</div>
+        <div class="section">
+            <div class="section-title">Projects</div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Activity Tracker System</div>
+                <div>Spring Boot, React.js, REST API, PostgreSQL, JPA/Hibernate</div>
+                <p>Built a full-stack web application to dynamically track and manage student activities with responsive UI and scalable backend integration.</p>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Healthcare Chatbot</div>
+                <div>Python, CSV, Excel (Planned Upgrade: React.js, Spring Boot, REST API)</div>
+                <p>Developed an intelligent chatbot to suggest possible conditions based on symptoms using rule-based logic and structured health datasets.</p>
+            </div>
         </div>
         
-        <div class="skill-category">
-            <div class="category-title">Web & API Development:</div>
-            <div>Full-Stack Web Development, RESTful APIs</div>
-        </div>
-        
-        <div class="skill-category">
-            <div class="category-title">Cloud & DevOps:</div>
-            <div>Microsoft Azure (AZ-900 Certified), AWS, Jenkins, Docker, Git, GitHub, CI/CD Pipelines</div>
-        </div>
-        
-        <div class="skill-category">
-            <div class="category-title">Operating Systems:</div>
-            <div>Linux, Windows</div>
-        </div>
-    </div>
-    
-    <div class="section">
-        <div class="section-title">Experience</div>
-        
-        <div class="subsection">
-            <div class="subsection-title">Software Engineer | ETHDC Technology</div>
-            <div class="date">Oct 2025 -- Present</div>
-        </div>
-        
-        <div class="subsection">
-            <div class="subsection-title">Trainee Software Engineer | ETHDC Technology</div>
-            <div class="date">Dec 2024 -- Sep 2025</div>
-            <ul>
-                <li>Built dynamic web modules using Spring Boot, React.js, REST APIs, Tailwind CSS, Material UI, and AJAX to improve responsiveness</li>
-                <li>Integrated PostgreSQL with Spring Boot via JPA/Hibernate for scalable data handling</li>
-                <li>Collaborated in Agile sprints to deliver production-ready features on time</li>
-                <li>Performed code reviews and module testing to ensure high-quality, maintainable code</li>
-            </ul>
-        </div>
-        
-        <div class="subsection">
-            <div class="subsection-title">Software Development Intern | Cybzilla Systems Pvt. Ltd.</div>
-            <div class="date">Mar 2024 -- Apr 2024</div>
-            <ul>
-                <li>Developed web interfaces with HTML, CSS, and JavaScript to enhance UI/UX</li>
-                <li>Gained experience with Linux OS basics and system-level tasks</li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="section">
-        <div class="section-title">Projects</div>
-        
-        <div class="subsection">
-            <div class="subsection-title">Activity Tracker System</div>
-            <div>Spring Boot, React.js, REST API, PostgreSQL, JPA/Hibernate</div>
-            <p>Built a full-stack web application to dynamically track and manage student activities with responsive UI and scalable backend integration.</p>
-        </div>
-        
-        <div class="subsection">
-            <div class="subsection-title">Healthcare Chatbot</div>
-            <div>Python, CSV, Excel (Planned Upgrade: React.js, Spring Boot, REST API)</div>
-            <p>Developed an intelligent chatbot to suggest possible conditions based on symptoms using rule-based logic and structured health datasets.</p>
-        </div>
-    </div>
-    
-    <div class="section">
-        <div class="section-title">Certifications</div>
-        
-        <div class="subsection">
-            <ul>
-                <li>Microsoft Certified: Azure Fundamentals (AZ-900) — Microsoft</li>
-                <li>Career Essentials in System Administration — Microsoft & LinkedIn</li>
-            </ul>
+        <div class="section">
+            <div class="section-title">Certifications</div>
+            
+            <div class="subsection">
+                <ul>
+                    <li>Microsoft Certified: Azure Fundamentals (AZ-900) — Microsoft</li>
+                    <li>Career Essentials in System Administration — Microsoft & LinkedIn</li>
+                </ul>
+            </div>
         </div>
     </div>
     
     <script>
-        // Add click handlers for email and phone links
+        function downloadPDF() {
+            const element = document.getElementById('resume-content');
+            const opt = {
+            margin: 8,
+            filename: 'Abhijit_Salunke_Resume.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2, useCORS: true },
+            jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' },
+            pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+        
         document.addEventListener('DOMContentLoaded', function() {
-            // Email link
             const emailLink = document.querySelector('a[href^="mailto:"]');
             if (emailLink) {
                 emailLink.addEventListener('click', function(e) {
@@ -276,7 +371,6 @@
                 });
             }
             
-            // Phone link
             const phoneLink = document.querySelector('a[href^="tel:"]');
             if (phoneLink) {
                 phoneLink.addEventListener('click', function(e) {
@@ -284,7 +378,6 @@
                 });
             }
             
-            // LinkedIn link
             const linkedinLink = document.querySelector('a[href*="linkedin.com"]');
             if (linkedinLink) {
                 linkedinLink.addEventListener('click', function(e) {
@@ -292,6 +385,47 @@
                 });
             }
         });
+
+
+
+        // metal button script
+
+         document.querySelector('.chrome-submit').addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.cssText = `
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.4);
+                transform: scale(0);
+                animation: ripple 0.6s linear;
+                width: ${size}px;
+                height: ${size}px;
+                top: ${y}px;
+                left: ${x}px;
+                pointer-events: none;
+            `;
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(3);
+                    opacity: 0;
+                }
+            }`;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
